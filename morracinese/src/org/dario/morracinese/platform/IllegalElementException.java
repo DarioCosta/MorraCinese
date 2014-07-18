@@ -1,4 +1,4 @@
-package org.dario.morracinese;
+package org.dario.morracinese.platform;
 
 public class IllegalElementException extends Exception {
 	/**

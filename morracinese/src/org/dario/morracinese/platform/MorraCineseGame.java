@@ -1,6 +1,8 @@
-package org.dario.morracinese;
+package org.dario.morracinese.platform;
 
 import java.util.Random;
+
+import org.dario.morracinese.games.classic.RPSStrategy;
 
 public class MorraCineseGame {
 	private int rounds;

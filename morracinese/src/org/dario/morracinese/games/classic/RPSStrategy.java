@@ -1,7 +1,11 @@
-package org.dario.morracinese;
+package org.dario.morracinese.games.classic;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.dario.morracinese.platform.Element;
+import org.dario.morracinese.platform.IllegalElementException;
+import org.dario.morracinese.platform.MorraCineseStrategy;
 
 public class RPSStrategy implements MorraCineseStrategy {
 

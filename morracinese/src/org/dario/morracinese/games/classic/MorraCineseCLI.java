@@ -1,7 +1,6 @@
 package org.dario.morracinese.games.classic;
 
 import org.dario.morracinese.platform.Game;
-import org.dario.morracinese.platform.GameStrategy;
 import org.dario.morracinese.platform.IllegalPlayerException;
 import org.dario.morracinese.platform.Player;
 import org.dario.morracinese.platform.RandomPlayerStrategy;

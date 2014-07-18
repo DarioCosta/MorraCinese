@@ -13,5 +13,7 @@ public interface PlayerStrategy {
 	public Collection<Element> getElements();
 
 	public void notifyOpponentScore(int score);
+	
+	public void showScore(int score);
 
 }

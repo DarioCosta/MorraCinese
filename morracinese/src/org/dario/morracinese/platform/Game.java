@@ -20,13 +20,9 @@ public class Game {
 	public void play(Player p1, Player p2) throws IllegalPlayerException {
 		strategy.setup(p1, p2);
 		while (!strategy.isGameOver()) {
-			Element x = p1.getNextElement();
-			Element y = p2.getNextElement();
-			p1.notifyOpponentElement(y);
-			p2.notifyOpponentElement(x);
 			try {
-				strategy.play(x, y);
-			} catch (IllegalElementException e) {
+				strategy.play();
+			} catch (IllegalPlayerException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

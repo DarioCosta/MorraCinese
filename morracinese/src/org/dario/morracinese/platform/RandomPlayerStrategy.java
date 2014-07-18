@@ -38,4 +38,9 @@ public class RandomPlayerStrategy implements PlayerStrategy {
 		// just drop it
 	}
 
+	@Override
+	public void showScore(int score) {
+		// just drop it
+	}
+
 }

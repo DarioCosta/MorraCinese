@@ -38,4 +38,8 @@ public class Player {
 	public void notifyOpponentScore(int score){
 		strategy.notifyOpponentScore(score);
 	}
+	
+	public void showScore(int score){
+		strategy.showScore(score);
+	}
 }

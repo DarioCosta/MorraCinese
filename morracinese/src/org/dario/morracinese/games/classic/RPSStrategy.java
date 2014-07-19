@@ -3,6 +3,8 @@ package org.dario.morracinese.games.classic;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.ImageIcon;
+
 import org.dario.morracinese.platform.Element;
 import org.dario.morracinese.platform.GameStrategy;
 import org.dario.morracinese.platform.IllegalElementException;
@@ -10,6 +12,11 @@ import org.dario.morracinese.platform.IllegalPlayerException;
 import org.dario.morracinese.platform.Player;
 
 public class RPSStrategy implements GameStrategy {
+	
+	public static final Element CARTA = new Element("CARTA", new ImageIcon("resources/carta.png").getImage());
+	public static final Element FORBICI = new Element("FORBICI", new ImageIcon("resources/forbice.png").getImage());
+	public static final Element PIETRA = new Element("PIETRA", new ImageIcon("resources/pietra.png").getImage());
+	
 
 	private List<Element> elements = new ArrayList<Element>();
 	private int rounds;
@@ -17,9 +24,9 @@ public class RPSStrategy implements GameStrategy {
 
 	public RPSStrategy(int rounds) {
 		this.rounds = rounds;
-		elements.add(Element.CARTA);
-		elements.add(Element.FORBICI);
-		elements.add(Element.PIETRA);
+		elements.add(CARTA);
+		elements.add(FORBICI);
+		elements.add(PIETRA);
 	}
 
 	public RPSStrategy() {

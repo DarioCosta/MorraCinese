@@ -42,4 +42,8 @@ public class Player {
 	public void showScore(int score){
 		strategy.showScore(score);
 	}
+	
+	public void notifyGameOver(){
+		strategy.notifyGameOver();
+	}
 }

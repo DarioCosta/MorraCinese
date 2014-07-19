@@ -43,4 +43,9 @@ public class RandomPlayerStrategy implements PlayerStrategy {
 		// just drop it
 	}
 
+	@Override
+	public void notifyGameOver() {
+		// just drop it
+	}
+
 }

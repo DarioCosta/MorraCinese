@@ -18,15 +18,15 @@ public class RPSStrategy implements GameStrategy {
 	public static final Element PIETRA = new Element("PIETRA", new ImageIcon("resources/pietra.png").getImage());
 	
 
-	private List<Element> elements = new ArrayList<Element>();
+	protected List<Element> elements = new ArrayList<Element>();
 	private int rounds;
 	private Player p1, p2;
 
 	public RPSStrategy(int rounds) {
 		this.rounds = rounds;
+		elements.add(PIETRA);
 		elements.add(CARTA);
 		elements.add(FORBICI);
-		elements.add(PIETRA);
 	}
 
 	public RPSStrategy() {

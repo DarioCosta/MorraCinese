@@ -27,7 +27,8 @@ public class Game {
 				e.printStackTrace();
 			}
 		}
-		
+		p1.notifyGameOver();
+		p2.notifyGameOver();
 	}
 
 }

@@ -15,5 +15,7 @@ public interface PlayerStrategy {
 	public void notifyOpponentScore(int score);
 	
 	public void showScore(int score);
+	
+	public void notifyGameOver();
 
 }

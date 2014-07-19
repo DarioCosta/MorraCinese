@@ -56,4 +56,9 @@ public class CLIUserAdapter implements PlayerStrategy {
 		System.out.println("Hai " + score + " punti");
 	}
 
+	@Override
+	public void notifyGameOver() {
+		System.out.println("Game Over");
+	}
+
 }

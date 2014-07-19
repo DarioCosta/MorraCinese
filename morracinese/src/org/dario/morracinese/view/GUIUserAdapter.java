@@ -1,6 +1,7 @@
 package org.dario.morracinese.view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -13,6 +14,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.BevelBorder;
@@ -108,12 +110,12 @@ public class GUIUserAdapter extends JPanel implements PlayerStrategy,
 			setLayout(new BorderLayout());
 			setBorder(new BevelBorder(BevelBorder.LOWERED));
 			score = new JLabel("0");
-			JPanel scorePanel=new JPanel();
+			JPanel scorePanel = new JPanel();
 			scorePanel.add(new JLabel("Punteggio: "));
 			scorePanel.add(score);
 			currentElement = new JLabel();
-			this.name=new JLabel(name);
-			JPanel namePanel=new JPanel();
+			this.name = new JLabel(name);
+			JPanel namePanel = new JPanel();
 			namePanel.add(new JLabel("Giocatore: "));
 			namePanel.add(this.name);
 			add(namePanel, BorderLayout.NORTH);
@@ -154,7 +156,7 @@ public class GUIUserAdapter extends JPanel implements PlayerStrategy,
 
 		public ButtonsPanel(ActionListener listener) {
 			setLayout(new FlowLayout());
-			this.listener=listener;
+			this.listener = listener;
 		}
 
 		private void resetButtons(final Collection<Element> elements) {
@@ -191,10 +193,12 @@ public class GUIUserAdapter extends JPanel implements PlayerStrategy,
 			}
 		}
 
-		public void setEnabled(Boolean enabled) {
+		public void setEnabled(boolean enabled) {
 			super.setEnabled(enabled);
-			for (int i = 0; i < elementButtons.length; i++) {
-				elementButtons[i].setEnabled(enabled);
+			if (elementButtons != null) {
+				for (int i = 0; i < elementButtons.length; i++) {
+					elementButtons[i].setEnabled(enabled);
+				}
 			}
 		}
 
@@ -205,7 +209,7 @@ public class GUIUserAdapter extends JPanel implements PlayerStrategy,
 
 		public ElementButton(Element element) {
 			super(new ImageIcon(element.getIcon()));
-			this.element=element;
+			this.element = element;
 		}
 
 		public Element getElement() {
@@ -224,5 +228,11 @@ public class GUIUserAdapter extends JPanel implements PlayerStrategy,
 			lock.unlock();
 
 		}
+	}
+
+	@Override
+	public void notifyGameOver() {
+		JOptionPane.showMessageDialog(this, "Game Over");
+		buttonsPanel.setEnabled(false);
 	}
 }

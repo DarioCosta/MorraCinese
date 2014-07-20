@@ -2,6 +2,8 @@ package org.dario.morracinese.platform;
 
 import java.util.Collection;
 
+import org.dario.morracinese.players.auto.RandomPlayerStrategy;
+
 public class Player {
 	private int score;
 	private PlayerStrategy strategy;

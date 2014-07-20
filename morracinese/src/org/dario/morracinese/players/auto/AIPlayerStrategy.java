@@ -1,7 +1,12 @@
-package org.dario.morracinese.platform;
+package org.dario.morracinese.players.auto;
 
 import java.util.Collection;
 import java.util.Random;
+
+import org.dario.morracinese.platform.Element;
+import org.dario.morracinese.platform.GameStrategy;
+import org.dario.morracinese.platform.IllegalElementException;
+import org.dario.morracinese.platform.PlayerStrategy;
 
 public class AIPlayerStrategy implements PlayerStrategy {
 	private Random randomno = new Random();
@@ -33,11 +38,14 @@ public class AIPlayerStrategy implements PlayerStrategy {
 
 	/*
 	 * A very raw algorithm to assign higher probability to the elements that
-	 * opponent used less in previous fights. Note: This is supposed to show how the
-	 * platform supports different strategies for players. This algorithm is
+	 * opponent used less in previous fights. Note: This is supposed to show how
+	 * the platform supports different strategies for players. This algorithm is
 	 * just a very basic example and it might fail to provide optimal results.
-	 * This may be not applicable to any possible game... it seems to make sense, as a
-	 * basic example, for morra-cinese.
+	 * This may be not applicable to any possible game as it assumes opponent
+	 * has exactly the same elements as local player... it seems to make sense,
+	 * as a basic example, for morra-cinese classic, spock-lizard and other
+	 * games of the same kind like pari-dispari but it would fail for other
+	 * kinds of games.
 	 * 
 	 * @return the Element I guess opponent will play
 	 */
@@ -50,7 +58,7 @@ public class AIPlayerStrategy implements PlayerStrategy {
 				prob[i] = loggedFights - history[i];
 				totalProbs += prob[i];
 			}
-			if(totalProbs==0){
+			if (totalProbs == 0) {
 				return getRandomElement();
 			}
 			int selected = randomno.nextInt(totalProbs);
@@ -74,7 +82,8 @@ public class AIPlayerStrategy implements PlayerStrategy {
 						return candidate;
 					}
 				} catch (IllegalElementException e) {
-					// something went wrong... just skip element and move over...
+					// something went wrong... just skip element and move
+					// over...
 					e.printStackTrace();
 				}
 			}
@@ -85,8 +94,8 @@ public class AIPlayerStrategy implements PlayerStrategy {
 			return getRandomElement();
 		}
 	}
-	
-	private Element getRandomElement(){
+
+	private Element getRandomElement() {
 		int resultInt = randomno.nextInt(elements.size());
 		return elements.toArray(new Element[0])[resultInt];
 	}

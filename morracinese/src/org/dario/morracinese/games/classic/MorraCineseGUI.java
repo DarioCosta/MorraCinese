@@ -5,8 +5,9 @@ import javax.swing.JFrame;
 import org.dario.morracinese.platform.Game;
 import org.dario.morracinese.platform.IllegalPlayerException;
 import org.dario.morracinese.platform.Player;
-import org.dario.morracinese.platform.RandomPlayerStrategy;
-import org.dario.morracinese.view.GUIUserAdapter;
+import org.dario.morracinese.players.auto.RandomPlayerStrategy;
+import org.dario.morracinese.players.useragent.GUIUserAdapter;
+
 
 public class MorraCineseGUI{
 
@@ -17,7 +18,7 @@ public class MorraCineseGUI{
 		gui.setContentPane(userAdapter);
 		Player p1=new Player(userAdapter);
 		Player p2=new Player(new RandomPlayerStrategy());
-		gui.setSize(500,300);
+		gui.setSize(500,320);
 		gui.setVisible(true);
 		Game game=new Game(new RPSStrategy(5));
 		try {

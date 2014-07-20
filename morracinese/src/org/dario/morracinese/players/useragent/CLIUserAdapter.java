@@ -1,4 +1,4 @@
-package org.dario.morracinese.view;
+package org.dario.morracinese.players.useragent;
 
 import java.util.Collection;
 import java.util.Scanner;

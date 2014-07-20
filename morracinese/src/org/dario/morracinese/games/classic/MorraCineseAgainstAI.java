@@ -2,12 +2,12 @@ package org.dario.morracinese.games.classic;
 
 import javax.swing.JFrame;
 
-import org.dario.morracinese.platform.AIPlayerStrategy;
 import org.dario.morracinese.platform.Game;
 import org.dario.morracinese.platform.GameStrategy;
 import org.dario.morracinese.platform.IllegalPlayerException;
 import org.dario.morracinese.platform.Player;
-import org.dario.morracinese.view.GUIUserAdapter;
+import org.dario.morracinese.players.auto.AIPlayerStrategy;
+import org.dario.morracinese.players.useragent.GUIUserAdapter;
 
 public class MorraCineseAgainstAI {
 

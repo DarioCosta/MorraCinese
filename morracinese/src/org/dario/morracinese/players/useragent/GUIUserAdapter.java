@@ -1,9 +1,7 @@
-package org.dario.morracinese.view;
+package org.dario.morracinese.players.useragent;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -102,6 +100,10 @@ public class GUIUserAdapter extends JPanel implements PlayerStrategy,
 	}
 
 	class PlayerViewPanel extends JPanel {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 		private JLabel score;
 		private JLabel currentElement;
 		private JLabel name;
@@ -151,6 +153,10 @@ public class GUIUserAdapter extends JPanel implements PlayerStrategy,
 	}
 
 	class ButtonsPanel extends JPanel {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 		private ElementButton[] elementButtons;
 		private ActionListener listener;
 
@@ -205,6 +211,10 @@ public class GUIUserAdapter extends JPanel implements PlayerStrategy,
 	}
 
 	class ElementButton extends JButton {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 		private Element element;
 
 		public ElementButton(Element element) {

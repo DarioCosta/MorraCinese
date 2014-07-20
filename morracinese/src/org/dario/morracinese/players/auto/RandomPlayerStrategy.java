@@ -1,7 +1,11 @@
-package org.dario.morracinese.platform;
+package org.dario.morracinese.players.auto;
 
 import java.util.Collection;
 import java.util.Random;
+
+import org.dario.morracinese.platform.Element;
+import org.dario.morracinese.platform.IllegalElementException;
+import org.dario.morracinese.platform.PlayerStrategy;
 
 public class RandomPlayerStrategy implements PlayerStrategy {
 	private Random randomno = new Random();

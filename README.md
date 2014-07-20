@@ -10,7 +10,7 @@ In particolare ho pensato di permettere di modificare le regole del gioco, per c
 
 Per realizzare questi disaccoppiamenti ho utilizzato lo strategy-pattern per cui al gioco è associata una GameStrategy in cui sono definite le "regole" del gioco e ai giocatori è associata una PlayerStrategy che definisce come quel giocatore deve giocare (quindi la strategia di gioco per i giocatori automatici o la modalità di interazione con l'utente per gli useragents)
 
-Tra Player e Game c'è una interazione simile ad un pattern Observer-Observable in cui i players sono osservatori del gioco e vengono notificati per eseguire delle funzioni di callback durante lo svolgimento della partita (che si "svolge" nel metodo play di Game)
+Tra Player e Game c'è una interazione di tipo Observer-Observable in cui i players sono osservatori del gioco e vengono notificati per eseguire delle funzioni di callback durante lo svolgimento della partita (che si "svolge" nel metodo play di Game)
 
 Nel package platform sono quindi definite le classi Game e Player (e la classe Element che rappresenta un "elemento" giocabile i.e. CARTA, FORBICI e PIETRA per la versione classica della morra cinese) e le interfacce GameStrategy e PlayerStrategy che sono poi implementate da classi concrete che realizzano alcuni esempi di queste strategie (oltre alla definizione di alcune eccezioni).
 
